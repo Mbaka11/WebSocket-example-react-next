@@ -34,14 +34,22 @@ To run the project locally, follow these steps:
    git clone https://github.com/yourusername/real-time-chat-app.git
    
 2. Navigate to the client and server directories:
-  ```bash
-  cd real-time-chat-app/client
-
+   ```bash
+   cd real-time-chat-app/client
+   cd real-time-chat-app/server
 
 3. Install dependencies:
-
-4. Start the development server:
-
+    ```bash
+   npm install
+   
+5. Start the development server:
+   In the client directory:
+   ```bash
+   npm run dev
+In the server directory:
+```bash
+   npm run server
+   
 5. Open your browser and visit http://localhost:3000 to see the real-time chat app in action.
    
 
