@@ -4,6 +4,8 @@
 
 This project demonstrates the implementation of a real-time chat application using WebSocket technology. WebSocket enables bidirectional communication between clients and a server, making it ideal for applications that require instant updates and interactions.
 
+> Note: This project is designed for demonstration purposes, especially for beginners, to showcase the implementation of real-time communication with WebSocket.
+
 ## Technologies Used
 
 - **React**: A popular JavaScript library for building user interfaces. In this project, React is used to create the client-side of the chat application, providing a dynamic and responsive user interface.
