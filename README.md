@@ -43,10 +43,10 @@ To run the project locally, follow these steps:
    npm install
    
 5. Start the development server:
-   In the client directory:
+   - In the client directory:
    ```bash
    npm run dev
-In the server directory:
+- In the server directory:
 ```bash
    npm run server
    
