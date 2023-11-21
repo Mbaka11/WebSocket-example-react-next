@@ -44,12 +44,12 @@ To run the project locally, follow these steps:
    
 5. Start the development server:
    - In the client directory:
-   ```bash
-   npm run dev
-- In the server directory:
-```bash
-   npm run server
-   
+      ```bash
+      npm run dev
+   - In the server directory:
+      ```bash
+      npm run server
+
 5. Open your browser and visit http://localhost:3000 to see the real-time chat app in action.
    
 
