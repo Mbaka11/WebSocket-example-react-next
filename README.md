@@ -1,4 +1,4 @@
-# Real-Time Chat App with WebSocket
+# Real-Time App Example For Beginners with WebSocket
 
 ## Overview
 
