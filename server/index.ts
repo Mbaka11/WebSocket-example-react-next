@@ -33,11 +33,11 @@ io.on("connection", (socket: Socket) => {
     socket.broadcast.emit("chat-message", { author, text });
   });
 
-  socket.on("join-room", ({ roomId, socketId }) => {
+  socket.on("join-room", ({ roomId, socketId, name }) => {
     console.log(`User ${socketId} joined room ${roomId}`);
     socket.join(roomId);
-    io.to(roomId).emit("user-connected", { socketId, usersInRoom });
-    addUser(socketId);
+    io.to(roomId).emit("user-connected", { socketId, usersInRoom, name });
+    addUser(name);
   });
 
   socket.on("get-users", ({ roomId, socketId }) => {

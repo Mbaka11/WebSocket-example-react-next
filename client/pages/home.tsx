@@ -6,22 +6,29 @@ const CreateJoinRoomPage: React.FC = () => {
   console.log("socket connected: ", socket.connected);
   const router = useRouter();
   const [roomId, setRoomId] = useState("");
+  const [name, setName] = useState("");
+  const [error, setError] = useState("");
 
   const handleCreateRoom = () => {
-    // Logic to handle creating a room
-    // For simplicity, redirect to the chat page with a generated room ID
+    if (!name.trim()) {
+      setError("Please enter your name.");
+      return;
+    }
+
     // const newRoomId = generateRandomRoomId();
     const newRoomId = "456";
     console.log(`Creating new room with ID ${newRoomId}`);
     console.log("SOCKET ID: ", socket.id);
-    socket.emit("join-room", { roomId: newRoomId, socketId: socket.id });
+    socket.emit("join-room", { roomId: newRoomId, socketId: socket.id, name });
     router.push(`/waiting-room/${newRoomId}`);
   };
 
   const handleJoinRoom = () => {
-    // Logic to handle joining a room with roomId
-    // For simplicity, redirect to the chat page with the entered room ID
-    // router.push(`/waiting-room/${roomId}`);
+    if (!name.trim()) {
+      setError("Please enter your name.");
+      return;
+    }
+
     const newRoomId = "456";
     socket.emit("join-room", { roomId: newRoomId, socketId: socket.id });
     router.push(`/waiting-room/456`);
@@ -35,6 +42,20 @@ const CreateJoinRoomPage: React.FC = () => {
   return (
     <div className="flex flex-col items-center justify-center h-screen">
       <h1 className="text-2xl font-bold mb-4">Create or Join a Room</h1>
+
+      <div className="mb-4">
+        <label className="text-black">Enter your name:</label>
+        <input
+          type="text"
+          value={name}
+          onChange={(e) => {
+            setName(e.target.value);
+            setError(""); // Clear error when user starts typing
+          }}
+          className="p-2 border rounded focus:outline-none focus:border-blue-500 text-black"
+        />
+        {error && <p className="text-red-500">{error}</p>}
+      </div>
 
       <button
         onClick={handleCreateRoom}
